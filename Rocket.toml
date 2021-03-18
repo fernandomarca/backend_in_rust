@@ -1,0 +1,37 @@
+
+[development]
+#workers = [number of cpus * 2]
+#secret_key = [randomly generated at launch]
+address = "localhost"
+keep_alive = 5
+limits = {forms = 32768}
+log = "normal"
+port = 3333
+read_timeout = 5
+template_dir = "src/templates/"
+write_timeout = 5
+Environment = "ROCKET_ADDRESS=localhost"
+
+[staging]
+#workers = [number of cpus * 2]
+#secret_key = [randomly generated at launch]
+address = "0.0.0.0"
+keep_alive = 5
+limits = {forms = 32768}
+log = "normal"
+port = 3333
+read_timeout = 5
+write_timeout = 5
+
+[production]
+#workers = [number of cpus * 2]
+#secret_key = [randomly generated at launch]
+address = "localhost"
+keep_alive = 5
+limits = {forms = 32768}
+log = "critical"
+port = 3333
+read_timeout = 5
+write_timeout = 5
+template_dir = "src/templates/"
+

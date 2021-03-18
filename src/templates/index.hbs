@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .container {
+      background-color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Hello world template</h1>
+    <p>{{name}}</p>
+  </div>
+  <button onclick="ola()">Click-me</button>
+  <button onclick="post()">Click-me post</button>
+  <script>
+    function ola() {
+      fetch("/hello?name=Fernando").then(response => {
+        response.text().then(response => { console.log(response); }
+        )
+      });
+    }
+    async function post() {
+      const rawResponse = await fetch("/todo", {
+        method: 'post',
+        mode: 'cors',
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        }),
+        body: JSON.stringify({
+          complete: true,
+          description: "testes post hbs",
+          custom: "testes post hbs",
+        })
+      });
+      const content = await rawResponse.json();
+      console.log(content);
+    }
+  </script>
+</body>
+
+</html>
