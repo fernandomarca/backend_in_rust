@@ -1,12 +1,10 @@
 extern crate diesel;
 
+use backend_in_rust::database::*;
+use backend_in_rust::models::Post;
 use diesel::prelude::*;
-use one_backend_in_rust::models::*;
-use one_backend_in_rust::*;
-
 fn main() {
-    use one_backend_in_rust::schema::posts::dsl::*;
-
+    use backend_in_rust::schema::posts::dsl::*;
     let connection = establish_connection();
     let results = posts
         .filter(published.eq(true))

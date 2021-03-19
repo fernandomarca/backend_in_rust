@@ -87,6 +87,7 @@ name = "backend_in_rust"
 version = "0.1.0"
 dependencies = [
  "diesel",
+ "diesel_full_text_search",
  "dotenv",
  "rocket",
  "rocket_contrib",
@@ -292,6 +293,15 @@ dependencies = [
  "proc-macro2 1.0.24",
  "quote 1.0.9",
  "syn 1.0.64",
+]
+
+[[package]]
+name = "diesel_full_text_search"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7ad3168d9d2008c58b8c9fabb79ddc38d1f9d511fa15e0dcbd6b987912b05783"
+dependencies = [
+ "diesel",
 ]
 
 [[package]]

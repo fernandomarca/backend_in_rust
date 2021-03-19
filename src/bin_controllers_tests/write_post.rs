@@ -1,6 +1,7 @@
 extern crate diesel;
 
-use one_backend_in_rust::*;
+use backend_in_rust::controllers::posts::create_post;
+use backend_in_rust::database::*;
 use std::io::{stdin, Read};
 
 fn main() {

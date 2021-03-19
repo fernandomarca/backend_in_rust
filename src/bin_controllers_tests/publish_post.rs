@@ -2,11 +2,12 @@ extern crate diesel;
 
 use self::diesel::prelude::*;
 use self::models::Post;
-use one_backend_in_rust::*;
+use backend_in_rust::database::*;
+use backend_in_rust::*;
 use std::env::args;
 
 fn main() {
-    use one_backend_in_rust::schema::posts::dsl::{posts, published};
+    use backend_in_rust::schema::posts::dsl::{posts, published};
 
     let id = args()
         .nth(1)

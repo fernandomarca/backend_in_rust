@@ -1,15 +1,3 @@
-use super::schema::posts;
-#[derive(Queryable)]
-pub struct Post {
-    pub id: i32,
-    pub title: String,
-    pub body: String,
-    pub published: bool,
-}
+pub use self::posts::{NewPost, Post};
 
-#[derive(Insertable)]
-#[table_name = "posts"]
-pub struct NewPost<'a> {
-    pub title: &'a str,
-    pub body: &'a str,
-}
+pub mod posts;

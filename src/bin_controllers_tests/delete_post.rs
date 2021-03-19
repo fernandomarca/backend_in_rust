@@ -1,11 +1,11 @@
 extern crate diesel;
 
 use self::diesel::prelude::*;
-use one_backend_in_rust::*;
+use backend_in_rust::database::*;
 use std::env::args;
 
 fn main() {
-    use one_backend_in_rust::schema::posts::dsl::*;
+    use backend_in_rust::schema::posts::dsl::*;
 
     let target = args().nth(1).expect("Expected a target to match against");
     let pattern = format!("%{}%", target);
